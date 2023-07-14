@@ -28,7 +28,7 @@ async fn main() {
     let token =
         env::var("BOT_TOKEN")
             .expect("Expected a token");
-    let intents = GatewayIntents::DIRECT_MESSAGES | GatewayIntents::MESSAGE_CONTENT;
+    let intents = GatewayIntents::DIRECT_MESSAGES | GatewayIntents::MESSAGE_CONTENT | GatewayIntents::GUILD_MESSAGES;
     let mut client = Client::builder(&token, intents)
         .event_handler(Handler)
         .intents(intents)
